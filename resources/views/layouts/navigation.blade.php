@@ -31,32 +31,35 @@
             @endif
         </ul>
         <div class="flex">
-            <div class="drawer drawer-end">
-                <input id="my-drawer" type="checkbox" class="drawer-toggle"/>
-                <div class="drawer-content">
-                    <!-- Page content here -->
-                    <label for="my-drawer" class="btn btn-ghost drawer-button">
-                        <i class="ri-menu-line"></i>
-                    </label>
+
+            @if ( null !== Auth::user() )
+                <div class="drawer drawer-end">
+                    <input id="my-drawer" type="checkbox" class="drawer-toggle"/>
+                    <div class="drawer-content">
+                        <!-- Page content here -->
+                        <label for="my-drawer" class="btn btn-ghost drawer-button">
+                            <i class="ri-menu-line"></i>
+                        </label>
+                    </div>
+                    <div class="drawer-side z-50">
+                        <label for="my-drawer" class="drawer-overlay"></label>
+                        <ul class="menu p-4 w-80 h-full bg-base-200 text-base-content ">
+                            <!-- Sidebar content here -->
+                            <li>
+                                <details open>
+                                    <summary>
+                                        <i class="ri-archive-drawer-line"></i> {{ __("Anagrafica") }}
+                                    </summary>
+                                    <ul>
+                                        <li><a href="{{ route("customers.list") }}">Elenco Clienti</a></li>
+                                        <li><a>Elenco Fornitori</a></li>
+                                    </ul>
+                                </details>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="drawer-side z-50">
-                    <label for="my-drawer" class="drawer-overlay"></label>
-                    <ul class="menu p-4 w-80 h-full bg-base-200 text-base-content ">
-                        <!-- Sidebar content here -->
-                        <li>
-                            <details open>
-                            <summary>
-                                <i class="ri-archive-drawer-line"></i> {{ __("Anagrafica") }}
-                            </summary>
-                            <ul>
-                                <li><a href="{{ route("customers.list") }}">Elenco Clienti</a></li>
-                                <li><a>Elenco Fornitori</a></li>
-                            </ul>
-                            </details>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            @endif
         </div>
     </div>
 </div>

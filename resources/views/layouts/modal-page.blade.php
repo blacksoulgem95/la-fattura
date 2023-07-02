@@ -14,8 +14,8 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="font-sans antialiased min-h-full min-w-full">
-<div class="min-h-full min-w-full">
+<body class="font-sans antialiased min-h-screen min-w-full">
+<div class="h-full min-w-full">
     @include('layouts.navigation')
 
     {{--            <!-- Page Heading -->--}}
@@ -28,7 +28,7 @@
     {{--            @endif--}}
 
     <!-- Page Content -->
-    <main class="container min-w-full min-h-full py-10 px-10 flex justify-center items-center">
+    <main class="container min-w-full h-full py-10 px-10 flex justify-center items-center">
         <div class="card w-96 bg-base-300 shadow-xl">
             <div class="card-body">
                 {{ $slot }}
@@ -37,5 +37,6 @@
 
     </main>
 </div>
+@include('layouts.footer')
 </body>
 </html>

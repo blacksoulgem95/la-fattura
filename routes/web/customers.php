@@ -18,3 +18,7 @@ Route::get('/customers', function () {
         'customers' => LegalEntity::where('is_customer', true)->get()
     ]);
 })->middleware(['auth', 'verified'])->name('customers.list');
+
+Route::get('/customers/create', function () {
+    return view('customers.new');
+})->middleware(['auth', 'verified'])->name('customers.new');

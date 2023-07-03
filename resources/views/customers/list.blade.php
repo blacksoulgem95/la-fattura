@@ -4,7 +4,7 @@
         <div class="flex flex-row justify-between">
             <h2 class="text-2xl">Customers</h2>
             <div>
-                <a class="btn btn-sm btn-primary">
+                <a href="{{ route("customers.new") }}" class="btn btn-sm btn-primary">
                     <i class="ri-add-line"></i> Nuovo
                 </a>
             </div>
